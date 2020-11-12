@@ -15,7 +15,6 @@ class PDFCropper():
         self.bottom=bottom
         self.top=top
 
-
     def cropFile(self):
         self.pdftoimage()
         imageList=[]
@@ -31,16 +30,16 @@ class PDFCropper():
                 flag=True
             self.saveImage(image,self.fileName+"out"+str(i)+".png")
         im.save(self.outFileName,save_all=True, append_images=imageList)
-        
-        
+
     def cropImage(self,image):
         
         width, height = image.size 
-        
-
         #add condition to skip croping if 
+        if width < self.right or heigh < bottom:
+            return image
         croppedImage= image.crop((self.left, self.top, self.right,self.bottom))
         return croppedImage 
+
     def loadImage(self,fileName):
         return Image.open(fileName) 
     
@@ -49,10 +48,9 @@ class PDFCropper():
         
         for i, image in enumerate(images):
              fname = self.fileName + str(i) + ".png"
-             image.saveImage(fname, "PNG")
+             image.save(fname, "PNG")
         self.pageCount=i
         
-
     def saveImage(self,image,fileName):
         image.save(fileName)
     
