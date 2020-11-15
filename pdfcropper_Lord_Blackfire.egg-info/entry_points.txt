@@ -1,0 +1,3 @@
+[console_scripts]
+pdfcropper = pdfcropper.PDFCropper:main
+

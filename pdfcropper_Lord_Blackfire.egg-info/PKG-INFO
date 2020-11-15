@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pdfcropper-Lord-Blackfire
+Version: 0.0.1
+Summary: PDF cropper: removes unwanted noise from pdf and compresses them
+Home-page: https://gitlab.com/pankaj.ekm/PDF-Cropper.git
+Author: S Krishna Bhat
+Author-email: memotoskbhat@gmail.com
+License: UNKNOWN
+Description: PDF Cropper
+        
+        A libarary to crop boundaries from pdf files, removing unwanted colours and preserves relevant text. Also compresses pdf size.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD 3-Clause License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

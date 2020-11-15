@@ -1,3 +1,7 @@
 *.png
 *.pdf
 .vscode
+trial.py
+__pycache__
+.temp
+.empty
