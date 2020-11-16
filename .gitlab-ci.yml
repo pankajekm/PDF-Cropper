@@ -7,7 +7,7 @@ stages:
 wheel:
   stage: build
   script:
-    - apk add gcc
+    - apk add gcc musl-dev
     - apk add linux-headers 
     - python setup.py sdist bdist_wheel
     - cat $PYPIRC > /tmp/.pypirc
