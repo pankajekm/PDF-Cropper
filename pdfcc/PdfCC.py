@@ -8,7 +8,7 @@ from pdf2image.exceptions import (
  PDFSyntaxError
 )
 
-class PDFCropper():
+class PdfCC():
     def __init__(self,fileName,outputFileName,left,right,top,bottom):
         self.fileName=fileName
         self.outFileName=outputFileName
@@ -40,7 +40,6 @@ class PDFCropper():
             print("Done")
         im.save(self.outFileName,save_all=True, append_images=imageList)
         
-
     def cropImage(self,image):
         
         width, height = image.size 
@@ -67,7 +66,7 @@ class PDFCropper():
     
 
 def main():
-    parser = argparse.ArgumentParser(description="PdfCropper -- The ideal pdf size cropper\nRemoves unwanted info and compresses the pdf.")
+    parser = argparse.ArgumentParser(description="PdfCC -- The ideal pdf size crop & compress.\nRemoves unwanted info and compresses the pdf.")
     parser.add_argument("Path", 
                         metavar='input_path', 
                             type=str,
@@ -79,5 +78,5 @@ def main():
     parser.add_argument('-o', nargs="?", metavar='output_path', dest='opath', default='o.pdf', help='Specify the output path (optional)')
     args=parser.parse_args()
 
-    pdfcropper=PDFCropper(args.Path,args.opath,args.L,args.R,args.T,args.B)
+    pdfcropper=PdfCC(args.Path,args.opath,args.L,args.R,args.T,args.B)
     pdfcropper.cropFile()

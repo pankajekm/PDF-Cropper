@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pdfcropper",
+    name="pdfcc",
     version="0.0.1",
     author="S Krishna Bhat",
     author_email="memotoskbhat@gmail.com",
-    description="PDF cropper: removes unwanted noise from pdf and compresses them",
+    description="PDF cropper & compressor: removes unwanted noise from pdf and compresses them",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/pankaj.ekm/PDF-Cropper.git",
+    url="https://gitlab.com/pankaj.ekm/PDF-CC.git",
     install_requires=[
           'pdf2image',
           'pillow',
