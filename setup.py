@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pdfcc",
-    version="0.0.1",
+    version="1.0.0",
     author="S Krishna Bhat",
     author_email="memotoskbhat@gmail.com",
     description="PDF cropper & compressor: removes unwanted noise from pdf and compresses them",
