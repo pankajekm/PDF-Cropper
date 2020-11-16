@@ -12,6 +12,10 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://gitlab.com/pankaj.ekm/PDF-Cropper.git",
+    install_requires=[
+          'pdf2image',
+          'pillow',
+      ],
     packages=setuptools.find_packages(),
     entry_points = {
         'console_scripts': ['pdfcropper = pdfcropper.PDFCropper:main']
