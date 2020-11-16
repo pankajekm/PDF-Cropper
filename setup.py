@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pdfcropper-Lord_Blackfire", # Replace with your own username
+    name="pdfcropper",
     version="0.0.1",
     author="S Krishna Bhat",
     author_email="memotoskbhat@gmail.com",

@@ -1,9 +1,0 @@
-README.md
-setup.py
-pdfcropper/PDFCropper.py
-pdfcropper/__init__.py
-pdfcropper_Lord_Blackfire.egg-info/PKG-INFO
-pdfcropper_Lord_Blackfire.egg-info/SOURCES.txt
-pdfcropper_Lord_Blackfire.egg-info/dependency_links.txt
-pdfcropper_Lord_Blackfire.egg-info/entry_points.txt
-pdfcropper_Lord_Blackfire.egg-info/top_level.txt
