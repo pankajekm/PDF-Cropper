@@ -72,10 +72,10 @@ def main():
                         metavar='input_path', 
                             type=str,
                             help="Path to the input pdf file.")
-    parser.add_argument('-L', nargs="?", dest='L', const=450, default=450, help='Specify the left limit')
-    parser.add_argument('-R', nargs="?", dest='R', const=2800, default=2800, help='Specify the right limit')
-    parser.add_argument('-T', nargs="?", dest='T', const=0, default=0, help='Specify the top limit')
-    parser.add_argument('-B', nargs="?", dest='B', const=1900, default=1900, help='Specify the left limit')
+    parser.add_argument('-L', nargs="?", dest='L', const=450, default=450, type=int, help='Specify the left limit')
+    parser.add_argument('-R', nargs="?", dest='R', const=2800, default=2800, type=int, help='Specify the right limit')
+    parser.add_argument('-T', nargs="?", dest='T', const=0, default=0, type=int, help='Specify the top limit')
+    parser.add_argument('-B', nargs="?", dest='B', const=1900, default=1900, type=int, help='Specify the left limit')
     parser.add_argument('-o', nargs="?", metavar='output_path', dest='opath', default='o.pdf', help='Specify the output path (optional)')
     args=parser.parse_args()
 
