@@ -5,3 +5,6 @@ trial.py
 __pycache__
 .temp
 .empty
+dist/
+build/
+*.egg-info
