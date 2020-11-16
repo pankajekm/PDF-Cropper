@@ -10,4 +10,5 @@ wheel:
   artifacts:
     paths:
     - dist/
-    expire_in: 1 wee
+    expire_in: 1 week
+    
