@@ -7,6 +7,7 @@ stages:
 wheel:
   stage: build
   script:
+    - apk add gcc
     - python setup.py sdist bdist_wheel
     - cat $PYPIRC > /tmp/.pypirc
     - pip install twine
