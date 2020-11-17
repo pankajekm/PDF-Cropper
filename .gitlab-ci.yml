@@ -15,8 +15,7 @@ wheel:
     - cat $PYPIRC > /tmp/.pypirc
     - pip install twine
     - python -m twine upload --repository gitlab dist/*.whl --config-file /tmp/.pypirc
-  only:
-    - tags
+
   artifacts:
     paths:
     - dist/
