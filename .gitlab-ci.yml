@@ -7,7 +7,7 @@ stages:
 wheel:
   stage: build
   script:
-    - apk add libc-dev
+    - apk add libc-dev libffi-dev
     - apk add musl-dev
     - apk add gcc
     - apk add linux-headers 
