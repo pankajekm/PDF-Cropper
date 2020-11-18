@@ -8,15 +8,7 @@ stages:
 wheel:
   stage: build
   script:
-    - apk add libc-dev libffi-dev libressl-dev
-    - apk add musl-dev
-    - apk add gcc
-    - apk add linux-headers 
     - python setup.py sdist bdist_wheel
-    - pip install twine
-    - cat $PYPIRC > /tmp/.pypirc
-    - python -m twine upload --repository gitlab dist/*.whl --config-file /tmp/.pypirc
-
 only on tags:
   stage: deploy
   script:
@@ -24,7 +16,6 @@ only on tags:
     - apk add musl-dev
     - apk add gcc
     - apk add linux-headers 
-    - python setup.py sdist bdist_wheel
     - pip install twine
     - cat $PYPIRC > /tmp/.pypirc
     - python -m twine upload --repository gitlab dist/*.whl --config-file /tmp/.pypirc
