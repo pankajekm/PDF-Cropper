@@ -3,6 +3,7 @@ image: python:3.9-alpine
 
 stages:
   - build
+  - deploy
 
 wheel:
   stage: build
@@ -13,6 +14,7 @@ wheel:
     - apk add linux-headers 
     - python setup.py sdist bdist_wheel
 only on tags:
+  stage: deploy
   rules:
     - if: '$CI_COMMIT_TAG != null'
   script:
