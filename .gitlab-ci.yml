@@ -9,13 +9,16 @@ wheel:
   stage: build
   script:
     - python setup.py sdist bdist_wheel
+  artifacts:
+    paths:
+    - dist/
+    expire_in: 1 week
 only on tags:
   stage: deploy
   script:
     - apk add libc-dev libffi-dev libressl-dev
     - apk add musl-dev
     - apk add gcc
-    - apk add linux-headers 
     - pip install twine
     - cat $PYPIRC > /tmp/.pypirc
     - python -m twine upload --repository gitlab dist/*.whl --config-file /tmp/.pypirc
