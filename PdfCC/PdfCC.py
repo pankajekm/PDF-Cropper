@@ -20,6 +20,7 @@ class PdfCC:
         self.TEMP = ".temp/"
 
     def cropFile(self):
+        """ Function to crop the pdf"""
         try:
             os.mkdir(".temp/")
         except OSError:
