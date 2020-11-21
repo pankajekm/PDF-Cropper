@@ -1,3 +1,13 @@
+"""
+PdfCC will help you to crop unnecessary boundaries from the pdf files. We are working on the additional functionalities.
+
+
+
+
+"""
+
+
+
 import os
 import argparse
 from PIL import Image
@@ -25,25 +35,26 @@ class PdfCC:
             os.mkdir(".temp/")
         except OSError:
             print("temp already exists")
-        self.pdftoimage()
+        self.__pdftoimage()
         imageList = []
         flag = False
 
         for i in range(0, self.pageCount + 1):
             print("Page:" + str(i) + "::")
-            image = self.loadImage(self.TEMP + self.fileName + str(i) + ".png")
-            image = self.cropImage(image)
+            image = self.__loadImage(
+                self.TEMP + self.fileName + str(i) + ".png")
+            image = self.__cropImage(image)
             if flag:
                 imageList.append(image)
             else:
                 im = image
                 flag = True
-            self.saveImage(image,
-                           self.TEMP + self.fileName + "out" + str(i) + ".png")
+            self.__saveImage(image,
+                             self.TEMP + self.fileName + "out" + str(i) + ".png")
             print("Done")
         im.save(self.outFileName, save_all=True, append_images=imageList)
 
-    def cropImage(self, image):
+    def __cropImage(self, image):
 
         width, height = image.size
         if width < self.right or height < self.bottom:
@@ -53,10 +64,10 @@ class PdfCC:
             (self.left, self.top, self.right, self.bottom))
         return croppedImage
 
-    def loadImage(self, fileName):
+    def __loadImage(self, fileName):
         return Image.open(fileName)
 
-    def pdftoimage(self):
+    def __pdftoimage(self):
         images = convert_from_path(self.fileName)
 
         for i, image in enumerate(images):
@@ -64,11 +75,14 @@ class PdfCC:
             image.save(self.TEMP + fname, "PNG")
         self.pageCount = i
 
-    def saveImage(self, image, fileName):
+    def __saveImage(self, image, fileName):
         image.save(fileName)
 
 
 def main():
+    """
+    This is a CLI wrapper.
+    """
     parser = argparse.ArgumentParser(
         description="PdfCC -- The ideal pdf size crop & compress.\nRemoves\
              unwanted info and compresses the pdf.")

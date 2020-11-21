@@ -1,11 +1,18 @@
-import setuptools
 
-with open("README.md", "r") as fh:
+
+
+
+
+import setuptools
+import os
+import sys
+
+with open(os.path.join(sys.path[0],"README.md"), "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pdfcc",
-    version="0.0.1",
+    name="PdfCC",
+    version="1.0.0",
     author="S Krishna Bhat",
     author_email="memotoskbhat@gmail.com",
     description="PDF cropper & compressor: removes unwanted noise from pdf and compresses them",
@@ -18,7 +25,7 @@ setuptools.setup(
       ],
     packages=setuptools.find_packages(),
     entry_points = {
-        'console_scripts': ['pdfcropper = pdfcropper.PDFCropper:main']
+        'console_scripts': ['pdfcc = pdfcc.pdfcc:main']
     },
     classifiers=[
         "Programming Language :: Python :: 3",
